@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ironwill.Service", "ironwill.Service\ironwill.Service.csproj", "{520684C1-8CE1-41A4-ABE8-304F96753163}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ironwill.Models", "ironwill.Models\ironwill.Models.csproj", "{2EC486AE-CC96-412F-9218-981F8EC93689}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{520684C1-8CE1-41A4-ABE8-304F96753163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{520684C1-8CE1-41A4-ABE8-304F96753163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{520684C1-8CE1-41A4-ABE8-304F96753163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{520684C1-8CE1-41A4-ABE8-304F96753163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EC486AE-CC96-412F-9218-981F8EC93689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC486AE-CC96-412F-9218-981F8EC93689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC486AE-CC96-412F-9218-981F8EC93689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC486AE-CC96-412F-9218-981F8EC93689}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7EC5D91-7841-4A22-ADEA-5D570B6520C0}
+	EndGlobalSection
+EndGlobal
