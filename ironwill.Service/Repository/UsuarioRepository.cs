@@ -32,6 +32,7 @@ namespace ironwill.Service.Repository
                 parameters.Add("Direccion", model.Direccion);
                 parameters.Add("Celular", model.Celular);
                 parameters.Add("Correo", model.Correo);
+                parameters.Add("Clave", model.Clave);
                 parameters.Add("Genero", model.Genero);
                 parameters.Add("Fecha_Nacimiento", model.Fecha_Nacimiento);
                 parameters.Add("Estado", model.Estado);
@@ -57,6 +58,7 @@ namespace ironwill.Service.Repository
                 parameters.Add("Direccion", model.Direccion);
                 parameters.Add("Celular", model.Celular);
                 parameters.Add("Correo", model.Correo);
+                parameters.Add("Clave", model.Clave);
                 parameters.Add("Genero", model.Genero);
                 parameters.Add("Fecha_Nacimiento", model.Fecha_Nacimiento);
                 parameters.Add("Estado", model.Estado);

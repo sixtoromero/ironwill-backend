@@ -15,6 +15,7 @@ namespace ironwill.Models
         public string Direccion { get; set; }
         public string Celular { get; set; }
         public string Correo { get; set; }
+        public string Clave { get; set; }
         public string Genero { get; set; }
         public DateTime Fecha_Nacimiento { get; set; }
         public bool Estado { get; set; }
