@@ -19,5 +19,9 @@
     <ProjectReference Include="..\ironwill.Models\ironwill.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+
 
 </Project>
