@@ -69,17 +69,32 @@ namespace ironwill.Service.Repository
             }
         }
 
-        public async Task<string> DeleteAsync(Usuarios model)
+        public async Task<string> DeleteAsync(int IdUsuario)
         {
             using (var connection = _connectionFactory.GetConnection)
             {
                 var query = "uspDeleteUsuario";
                 var parameters = new DynamicParameters();
 
-                parameters.Add("IdUsuario", model.IdUsuario);                
+                parameters.Add("IdUsuario", IdUsuario);                
 
                 var result = await connection.QuerySingleAsync<string>(query, param: parameters, commandType: CommandType.StoredProcedure);
 
+                return result;
+            }
+        }
+
+        public async Task<Usuarios> getUserByLogin(string Correo, string Clave)
+        {
+            using (var connection = _connectionFactory.GetConnection)
+            {
+                var query = "UspgetUserByLogin";
+                var parameters = new DynamicParameters();
+
+                parameters.Add("Correo", Correo);
+                parameters.Add("Clave", Clave);
+
+                var result = await connection.QuerySingleAsync<Usuarios>(query, param: parameters, commandType: CommandType.StoredProcedure);
                 return result;
             }
         }
