@@ -13,19 +13,19 @@ namespace ironwill.Service.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class Perfil_Profesional_InstructorController : Controller
+    public class Historial_ClinicoController : Controller
     {
-        private readonly IPerfil_Profesional_InstructorRepository _PerfilPro;
+        private readonly IHistorial_ClinicoRepository _Historial;
         private readonly AppSettings _appSettings;
 
-        public Perfil_Profesional_InstructorController(IPerfil_Profesional_InstructorRepository _iPerfilpro, IOptions<AppSettings> appSettings)
+        public Historial_ClinicoController(IHistorial_ClinicoRepository _iHistorial, IOptions<AppSettings> appSettings)
         {
-            _PerfilPro = _iPerfilpro;
+            _Historial = _iHistorial;
             _appSettings = appSettings.Value;
         }
 
         [HttpPost]
-        public async Task<IActionResult> InsertAsync(Perfil_Profesional_Instructor model)
+        public async Task<IActionResult> InsertAsync(Historial_Clinico model)
         {
             Response<string> response = new Response<string>();
             try
@@ -33,7 +33,7 @@ namespace ironwill.Service.Controllers
                 if (model == null)
                     return BadRequest();
 
-                var result = await _PerfilPro.InsertAsync(model);
+                var result = await _Historial.InsertAsync(model);
                 if (result == "success")
                 {
                     response.Data = result;
@@ -62,7 +62,7 @@ namespace ironwill.Service.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateAsync(Perfil_Profesional_Instructor model)
+        public async Task<IActionResult> UpdateAsync(Historial_Clinico model)
         {
             Response<string> response = new Response<string>();
             try
@@ -70,7 +70,7 @@ namespace ironwill.Service.Controllers
                 if (model == null)
                     return BadRequest();
 
-                var result = await _PerfilPro.UpdateAsync(model);
+                var result = await _Historial.UpdateAsync(model);
                 if (result == "success")
                 {
                     response.Data = result;
@@ -98,14 +98,14 @@ namespace ironwill.Service.Controllers
             }
         }
 
-        [HttpDelete("{IdUsuario}")]
-        public async Task<IActionResult> DeleteAsync(int IdUsuario)
+        [HttpDelete("{IdHistorialClinico}")]
+        public async Task<IActionResult> DeleteAsync(int IdHistorialClinico)
         {
             Response<string> response = new Response<string>();
 
             try
             {
-                var result = await _PerfilPro.DeleteAsync(IdUsuario);
+                var result = await _Historial.DeleteAsync(IdHistorialClinico);
 
                 if (result == "success")
                 {
@@ -131,13 +131,13 @@ namespace ironwill.Service.Controllers
         }
 
         [HttpGet("{IdUsuario}")]
-        public async Task<IActionResult> GetPerfilProfesionalInst(int IdUsuario)
+        public async Task<IActionResult> GetHistorial_Clinico(int IdUsuario)
         {
-            Response<IEnumerable<Perfil_Profesional_Instructor>> response = new Response<IEnumerable<Perfil_Profesional_Instructor>>();
+            Response<IEnumerable<Historial_Clinico>> response = new Response<IEnumerable<Historial_Clinico>>();
 
             try
             {
-                var result = await _PerfilPro.getPerfilProfesionalInst(IdUsuario);
+                var result = await _Historial.getHistorial_Clinico(IdUsuario);
 
                 if (result != null)
                 {
@@ -160,7 +160,7 @@ namespace ironwill.Service.Controllers
             {
                 response.Data = null;
                 response.IsSuccess = false;
-                response.Message = "Ha ocurrido un error, inesperado.";
+                response.Message = "Ha ocurrido un error, inesperado. " + ex.Message;
 
                 return BadRequest(response);
             }
