@@ -62,6 +62,8 @@ namespace ironwill.Service
             //Inyectando capas
             services.AddSingleton<IConnectionFactory, ConnectionFactory>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IAgendaRepository, AgendaRepository>();
+            services.AddScoped<ITipos_EjerciciosRepository, Tipos_EjerciciosRepository>(); 
 
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
@@ -100,6 +102,7 @@ namespace ironwill.Service
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseCors(this.MiCors);

@@ -12,6 +12,6 @@ namespace ironwill.Service.Repository
         Task<string> UpdateAsync(Tipos_Ejercicios model);
         Task<string> DeleteAsync(int IdTipoEjercicio);
 
-        Task<IEnumerable<Tipos_Ejercicios>> getTipos_Ejercicios(int IdUsuario);
+        Task<IEnumerable<Tipos_Ejercicios>> getTipos_Ejercicios();        
     }
 }

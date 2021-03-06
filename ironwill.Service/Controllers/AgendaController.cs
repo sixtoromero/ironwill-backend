@@ -165,5 +165,40 @@ namespace ironwill.Service.Controllers
                 return BadRequest(response);
             }
         }
+
+        [HttpGet("{IdUsuario}")]
+        public async Task<IActionResult> GetHistoryAthlete(int IdUsuario)
+        {
+            Response<IEnumerable<Agenda>> response = new Response<IEnumerable<Agenda>>();
+
+            try
+            {
+                var result = await _Agenda.getHistoryAthlete(IdUsuario);
+                if (result != null)
+                {
+                    response.Data = result;
+                    response.IsSuccess = true;
+                    response.Message = string.Empty;
+
+                    return Ok(response);
+                }
+                else
+                {
+                    response.Data = null;
+                    response.IsSuccess = false;
+                    response.Message = "No se encontraron resultados";
+
+                    return BadRequest(response);
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Data = null;
+                response.IsSuccess = false;
+                response.Message = ex.Message;
+
+                return BadRequest(response);
+            }
+        }
     }
 }

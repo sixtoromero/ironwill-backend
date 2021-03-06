@@ -163,7 +163,6 @@ namespace ironwill.Service.Controllers
 
                 return BadRequest(response);
             }
-        }
-
+        }        
     }
 }

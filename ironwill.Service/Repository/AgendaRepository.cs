@@ -3,6 +3,7 @@ using ironwill.Models;
 using ironwill.Service.Data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -83,5 +84,19 @@ namespace ironwill.Service.Repository
             }
         }
 
+        public async Task<IEnumerable<Agenda>> getHistoryAthlete(int IdUsuario)
+        {
+            using (var connection = _connectionFactory.GetConnection)
+            {
+                var query = "uspGetHistoryAthlete";
+                var parameters = new DynamicParameters();
+
+                parameters.Add("IdUsuario", IdUsuario);
+
+                var result = await connection.QueryAsync<Agenda>(query, param: parameters, commandType: CommandType.StoredProcedure);
+
+                return result;
+            }
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace ironwill.Service.Repository
         Task<string> UpdateAsync(Usuarios model);
         Task<string> DeleteAsync(int IdUsuario);
 
-        Task<Usuarios> getUserByLogin(string Correo, string Clave);
-
+        Task<Usuarios> getUserByLogin(string Correo, string Clave);        
+        
     }
 }

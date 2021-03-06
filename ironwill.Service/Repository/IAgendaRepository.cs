@@ -13,5 +13,6 @@ namespace ironwill.Service.Repository
         Task<string> DeleteAsync(int IdAgenda);
 
         Task<IEnumerable<Agenda>> getAgenda(int IdUsuario);
+        Task<IEnumerable<Agenda>> getHistoryAthlete(int IdUsuario);
     }
 }

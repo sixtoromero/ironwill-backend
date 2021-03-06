@@ -12,6 +12,9 @@ namespace ironwill.Models
         public DateTime Fecha { get; set; }
         public string Hora { get; set; }
         public DateTime Fecha_Creacion { get; set; }
-        
+
+        public string Deportista { get; set; }
+        public string Ejercicio { get; set; }
+
     }
 }

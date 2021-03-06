@@ -130,14 +130,14 @@ namespace ironwill.Service.Controllers
             }
         }
 
-        [HttpGet("{IdUsuario}")]
-        public async Task<IActionResult> GetTipos_Ejercicios(int IdUsuario)
+        [HttpGet]
+        public async Task<IActionResult> GetTipos_Ejercicios()
         {
             Response<IEnumerable<Tipos_Ejercicios>> response = new Response<IEnumerable<Tipos_Ejercicios>>();
 
             try
             {
-                var result = await _Tipos_Ejercicios.getTipos_Ejercicios(IdUsuario);
+                var result = await _Tipos_Ejercicios.getTipos_Ejercicios();
 
                 if (result != null)
                 {

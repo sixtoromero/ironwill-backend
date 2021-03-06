@@ -3,6 +3,7 @@ using ironwill.Models;
 using ironwill.Service.Data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -65,19 +66,16 @@ namespace ironwill.Service.Repository
             }
         }
 
-        public async Task<IEnumerable<Tipos_Ejercicios>> getTipos_Ejercicios(int IdUsuario)
+        public async Task<IEnumerable<Tipos_Ejercicios>> getTipos_Ejercicios()
         {
             using (var connection = _connectionFactory.GetConnection)
             {
                 var query = "UspgetTipos_Ejercicios";
-                var parameters = new DynamicParameters();
 
-                parameters.Add("IdUsuario", IdUsuario);
-
-                var result = await connection.QuerySingleAsync<IEnumerable<Tipos_Ejercicios>>(query, param: parameters, commandType: CommandType.StoredProcedure);
+                var result = await connection.QueryAsync<Tipos_Ejercicios>(query, commandType: CommandType.StoredProcedure);
                 return result;
             }
-        }
+        }        
 
     }
 }

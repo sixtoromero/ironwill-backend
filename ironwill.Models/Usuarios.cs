@@ -20,6 +20,10 @@ namespace ironwill.Models
         public DateTime Fecha_Nacimiento { get; set; }
         public bool Estado { get; set; }
         public DateTime Fecha_Creacion { get; set; }
-        
+
+        public int IdPerfil { get; set; }
+        public string Perfil { get; set; }
+
+
     }
 }
